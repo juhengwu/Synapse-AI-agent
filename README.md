@@ -29,6 +29,10 @@ Synapse will:
    - You can launch it locally with a single click.
 
 ---
+## 🛠 Demo 
+
+### Click to Watch
+[![Watch the Demo](https://github.com/user-attachments/assets/930cdb9e-41e1-487a-b2a0-739db0628d89)](https://youtu.be/7koMufdnuQc)
 
 ## 🛠 How To Use
 
