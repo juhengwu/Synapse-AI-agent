@@ -18,3 +18,5 @@ __pycache__/
 # 忽略环境变量文件
 .env
 .pytest_cache
+
+./src/generated_code.py

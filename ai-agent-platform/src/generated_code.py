@@ -1,31 +1,41 @@
 import streamlit as st
+from PIL import Image
+import io
+import base64
 
-# Define the title of the app
-st.title("Basic Arithmetic Calculator")
+# Function to generate base64 string for embedding images in the page
+def img_to_base64_str(img_path):
+    with open(img_path, "rb") as img_file:
+        return base64.b64encode(img_file.read()).decode()
 
-# Define variables to store the input numbers
-number1 = st.number_input("Enter first number", format="%f")
-number2 = st.number_input("Enter second number", format="%f")
+# Function to display an image with specified width using base64 string
+def display_image(img_path, width=300):
+    img_str = img_to_base64_str(img_path)
+    st.markdown(
+        f'<img src="data:image/png;base64,{img_str}" width="{width}">',
+        unsafe_allow_html=True,
+    )
 
-# Define a function to perform the arithmetic operations
-def calculate(operation, num1, num2):
-    try:
-        if operation == 'add':
-            return num1 + num2
-        elif operation == 'subtract':
-            return num1 - num2
-        elif operation == 'multiply':
-            return num1 * num2
-        elif operation == 'divide':
-            return num1 / num2
-    except ZeroDivisionError:
-        return "Cannot divide by zero!"
+# Function to display visual effects (placeholders for actual effects)
+def display_visual_effects():
+    st.write("### Visual Effect 1: Image Transition")
+    display_image("path_to_transition_image.png")
 
-# Define UI elements for operations
-operation = st.selectbox("Choose operation", ("add", "subtract", "multiply", "divide"))
-calculate_button = st.button("Calculate")
+    st.write("### Visual Effect 2: Interactive Slider")
+    st.slider("Slide to interact", 0, 100, 50)
 
-# Perform the calculation and display the result when the button is clicked
-if calculate_button:
-    result = calculate(operation, number1, number2)
-    st.success(f"The result is: {result}")
+    st.write("### Visual Effect 3: Expanding Circles")
+    display_image("path_to_circles_image.png")
+
+# Streamlit UI components
+st.title("Engaging Visual Effects with Streamlit")
+
+st.header("Welcome to our cutting-edge visual effects showcase!")
+st.write("Experience the creativity and technical prowess of our brand through engaging visual elements.")
+
+# Display the visual effects in the app
+display_visual_effects()
+
+# Footer
+st.write("---")
+st.write("Thank you for visiting our visual effects showcase. We hope you enjoyed the experience!")
