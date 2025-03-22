@@ -1,0 +1,16 @@
+# 基础依赖
+pydantic>=2.7.4,<3.0.0
+
+# LangChain 核心及其 OpenAI 插件
+langchain==0.1.15
+langchain-openai==0.1.7
+langchain-core==0.1.46
+
+# crewAI - 自动智能体系统（已支持 langchain 0.1.x）
+crewai==0.35.8
+
+# embedchain（如果项目确实需要嵌入功能，可保留）
+embedchain==0.1.113
+
+# instructor（可选，确保与 Pydantic v2 兼容）
+instructor==1.3.3
